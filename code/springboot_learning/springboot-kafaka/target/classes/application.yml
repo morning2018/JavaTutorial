@@ -1,0 +1,18 @@
+server:
+  port: 8080
+
+spring:
+  kafka:
+    consumer:
+      bootstrap-servers: 3.1.4.231:30909
+      enable-auto-commit: true
+      max-poll-records: 1
+      fetch-max-wait: 100
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      auto-offset-reset: earliest
+    producer:
+      bootstrap-servers: 3.1.4.231:30909
+      retries: 0
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
