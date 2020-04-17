@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.demo.springboot.mapper.datasource1.UserMapper" >
+    <resultMap id="BaseResultMap" type="com.demo.springboot.po.UserPo" >
+        <id column="user_id" property="userId" jdbcType="BIGINT" />
+        <result column="username" property="username" jdbcType="VARCHAR" />
+        <result column="password" property="passWord" jdbcType="VARCHAR" />
+        <result column="gender" property="gender" javaType="com.demo.springboot.enums.GnederEnum"/>
+        <result column="email" property="email" jdbcType="VARCHAR" />
+    </resultMap>
+    
+    <sql id="Base_Column_List" >
+        user_id, username, password, gender, email
+    </sql>
+
+    <select id="getAll" resultMap="BaseResultMap"  >
+       SELECT 
+       <include refid="Base_Column_List" />
+	   FROM sys_user
+    </select>
+
+    <select id="getOne" parameterType="java.lang.Long" resultMap="BaseResultMap" >
+        SELECT 
+       <include refid="Base_Column_List" />
+	   FROM sys_user
+	   WHERE user_id = #{id}
+    </select>
+
+    <insert id="insert" parameterType="com.demo.springboot.po.UserPo" >
+       INSERT INTO 
+       		sys_user
+       		(username,password,gender,email) 
+       	VALUES
+       		(#{username}, #{password}, #{gender},#{email})
+    </insert>
+    
+    <update id="update" parameterType="com.demo.springboot.po.UserPo" >
+       UPDATE 
+       		sys_user 
+       SET 
+       	<if test="username != null">username = #{username},</if>
+       	<if test="password != null">password = #{password},</if>
+       	email = #{email}
+       WHERE 
+       		user_id = #{id}
+    </update>
+    
+    <delete id="delete" parameterType="java.lang.Long" >
+       DELETE FROM
+       		 sys_user 
+       WHERE 
+       		 user_id =#{id}
+    </delete>
+</mapper>
