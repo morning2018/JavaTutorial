@@ -1,6 +1,0 @@
-com\learning\springboot\kafka\KafakaSender.class
-com\learning\springboot\kafka\message\KafakaMessage.class
-com\learning\springboot\kafka\config\KafkaConfig.class
-com\learning\springboot\Application.class
-com\learning\springboot\kafka\consumer\ConfigurationConsumer.class
-com\learning\springboot\kafka\KafkaReceiver.class
