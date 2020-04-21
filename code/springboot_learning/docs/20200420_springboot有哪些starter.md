@@ -1,0 +1,48 @@
+> reference:
+> https://spring.io/projects/spring-boot
+### 快速了解springboot中提供了哪些starter
+  springboot的一个大的特性就是提供可快速开发的模板starter,那么我们怎么知道新发布的springboot中包含了哪些starter呢？其实通过源码我们就可以知道了，下面是springboot的父pom如下：
+```java
+ <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.2.6.RELEASE</version>
+ </parent>
+```
+再通过IDE找到spring-boot-starter-parent的父pom,如下：
+```
+ <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-dependencies</artifactId>
+    <version>2.2.6.RELEASE</version>
+    <relativePath>../../spring-boot-dependencies</relativePath>
+  </parent>
+```
+打开spring-boot-dependencies，可以看到其定义了各种starter,如下：
+```
+  ...more
+  <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter</artifactId>
+    <version>2.2.6.RELEASE</version>
+  </dependency>
+  <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-activemq</artifactId>
+    <version>2.2.6.RELEASE</version>
+  </dependency>
+  ...more
+```
+同时，这个文件中也发现了其他依赖包的版本号,如下：
+```
+  ...more
+  <activemq.version>5.15.12</activemq.version>
+  <antlr2.version>2.7.7</antlr2.version>
+  <appengine-sdk.version>1.9.79</appengine-sdk.version>
+  <artemis.version>2.10.1</artemis.version>
+  <aspectj.version>1.9.5</aspectj.version>
+  <assertj.version>3.13.2</assertj.version>
+  <atomikos.version>4.0.6</atomikos.version>
+  <awaitility.version>4.0.2</awaitility.version>
+  ...more
+```

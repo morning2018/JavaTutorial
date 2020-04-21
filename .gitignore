@@ -1,3 +1,5 @@
 /.idea
 /code/springboot_learning/*.iml
 /code/springboot_learning/springboot-kafaka/target
+/code/java_learning/target
+/code/java_learning/*.iml

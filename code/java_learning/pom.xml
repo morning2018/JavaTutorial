@@ -3,10 +3,15 @@
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.learning</groupId>
-	<artifactId>learning</artifactId>
+	<artifactId>java-learning</artifactId>
 	<version>0.0.1</version>
 
     <dependencies>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.16.18</version>
+		</dependency>
 		<!--单元测试
 		<dependency>
 			<groupId>junit</groupId>
