@@ -2,7 +2,7 @@
      <!-- Inherit defaults from Spring Boot -->
     <parent>
         <groupId>com.learning</groupId>
-        <artifactId>spring-boot</artifactId>
+        <artifactId>spring-boot-learning</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     

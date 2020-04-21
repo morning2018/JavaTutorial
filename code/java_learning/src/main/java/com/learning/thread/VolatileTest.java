@@ -10,7 +10,7 @@ public class VolatileTest extends Thread {
     /**
      * 循环标志，无限循环不一定停止
      */
-    private static  boolean flay = false;
+    private static  boolean flag = false;
     /**
      * 循环标志，一定能让循环停止
      */
@@ -22,7 +22,7 @@ public class VolatileTest extends Thread {
     @Override
      public void run() {
         // 线程无限循环，直到外部打断
-        while (!flay){
+        while (!flag){
             System.out.println("线程持续运行");
         }
         System.out.println("线程停止运行了");
@@ -41,6 +41,6 @@ public class VolatileTest extends Thread {
         // 保证线程能进入循环
         Thread.sleep(1000);
         // 修改全局变量,停止线程运行
-        flay = true;
+        flag = true;
     }
 }
