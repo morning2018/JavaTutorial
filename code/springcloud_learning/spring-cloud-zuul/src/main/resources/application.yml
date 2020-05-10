@@ -1,0 +1,111 @@
+zuul:
+  host:
+    connect-timeout-millis: 60000
+    socket-timeout-millis: 60000
+  # 忽略所有微服务,不添加默认路由,只路由指定的微服务
+  ignored-services: '*'
+  # 添加header信息
+  add-host-header: true
+  # 取消敏感头,向下游服务传递固定请求头以,分割
+  sensitive-headers: Cookie,Set-Cookie,Authorization
+  routes:
+    # 统一门户路由配置
+    统一门户sso_noswagger:
+      # 路由匹配地址
+      path: /uaa/**
+      # 指定微服务
+      serviceId: kangpaas-oauth-server
+      # 转发前是否忽略前缀
+      stripPrefix: true
+    # 安全管理路由配置
+    安全管理auth_noswagger:
+      path: /api/v1/security/**
+      serviceId: kangpaas-systemmgnt-server
+      stripPrefix: false
+    # 资源管理路由配置
+    资源管理cmdb:
+      path: /api/v1/cmdb/**
+      serviceId: kangpaas-cmdb-server
+      stripPrefix: false
+    # 自动化组件路由配置
+    #    自动化组件automation:
+    #      path: /api/v1/automation/**
+    #      serviceId: kangpaas-automation-server
+    #      stripPrefix: false
+    # 域管理路由配置
+    域管理privtm_noswagger:
+      path: /api/v1/privtm/**
+      serviceId: kangpaas-cmdb-server
+      stripPrefix: false
+    # mdm 路由配置
+    mdm_noswagger:
+      path: /api/v1/mdm/**
+      serviceId: kangpaas-cmdb-server
+      stripPrefix: false
+    # 应用管理路由配置
+    application_noswagger:
+      path: /api/v1/application/**
+      serviceId: kangpaas-cmdb-server
+      stripPrefix: false
+    # 定时任务路由配置
+    #    定时任务管理job:
+    #      path: /api/v1/job/**
+    #      serviceId: kangpaas-job-server
+    #      stripPrefix: false
+    # 消息服务路由配置
+    message_noswagger:
+      path: /api/v1/msg/**
+      serviceId: kangpaas-systemmgnt-server
+      stripPrefix: false
+    # 全局配置路由配置
+    globalconfig_noswagger:
+      path: /api/v1/sys/**
+      serviceId: kangpaas-systemmgnt-server
+      stripPrefix: false
+    # 通用服务路由配置
+    通用服务common:
+      path: /api/v1/common/**
+      serviceId: kangpaas-systemmgnt-server
+      stripPrefix: false
+    # 应用系统路由配置
+    应用系统appsys:
+      path: /api/v1/appsys/**
+      serviceId: kangpaas-appsys-server
+      stripPrefix: false
+    # 服务编排模块路由配置
+    #    服务编排模块servorch:
+    #      path: /api/v1/servorch/**
+    #      serviceId: kangpaas-service-flow
+    #      stripPrefix: false
+    # 性能监控模块路由配置
+    性能监控模块monitormgnt:
+      path: /api/v1/monitormgnt/**
+      serviceId: kangpaas-monitormgnt-server
+      stripPrefix: false
+    # 日志分析监控路由配置
+    日志分析监控模块monitormgnt_noswagger:
+      path: /api/v1/logmgnt/**
+      serviceId: kangpaas-monitormgnt-server
+      stripPrefix: false
+  strip-prefix: false
+  prefix:
+
+eureka:
+  instance:
+    # 健康检查页面的URL，相对路径，默认使用 HTTP 访问，如果需要使用 HTTPS则需要使用绝对路径配,默认: /helth
+    health-check-url-path: /health
+    # 状态页面的URL，相对路径，默认使用 HTTP 访问，如果需要使用 HTTPS则需要使用绝对路径配置,默认: /info
+    status-page-url-path: /info
+    # 使用 ip 注册
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ipAddress}:${spring.application.name}:${server.port}
+  client:
+    service-url:
+      # eureka 注册地址
+      defaultZone: http://127.0.0.1:8091/eureka
+    # 指示从eureka服务器获取注册表信息的频率（s）
+    registry-fetch-interval-seconds: 5
+    # 从 eureka 获取注册信息
+    fetch-registry: true
+    # 注册到 eureka
+    register-with-eureka: true

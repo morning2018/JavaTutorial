@@ -1,0 +1,48 @@
+server:
+  port: 18081 #服务端口号
+
+spring:
+  application:
+    name: gateway-microservice #服务实例名称
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:18080/eureka #eureka服务端注册地址
+    registry-fetch-interval-seconds: 5  #指从eureka服务器获取注册表信息的频率（s）
+    fetch-registry: true   #是否从eureka获取注册信息
+    register-with-eureka: true  #是否注册到 eureka
+  instance:
+    health-check-url-path: /health #健康检查页面的URL，相对路径，默认使用HTTP访问
+    status-page-url-path: /info   #状态页面的URL，相对路径，默认使用 HTTP 访问
+    prefer-ip-address: true  # 使用ip注册
+    instance-id: ${spring.cloud.client.ipAddress}:${spring.application.name}:${server.port}）
+
+
+zuul:
+  host:
+    connect-timeout-millis: 60000 #设置连接zuul超时(单位：毫秒)
+    socket-timeout-millis: 60000 #设置zuul套接字超时(单位：毫秒)
+  ignored-services: '*'   #忽略所有微服务,不添加默认路由,只路由指定的微服务
+  add-host-header: true   #添加header信息
+  sensitive-headers: Cookie,Set-Cookie,Authorization  # 取消敏感头,向下游服务传递固定请求头以,分割
+  strip-prefix: false #全局,转发前是否忽略前缀
+  prefix: # 转发前统一添加的前缀
+  routes:
+    customer_microservice:              #路由名称：客户微服务
+      path: /api/v1/customer/**         #匹配路径
+      serviceId: customer-microservice  #指定的微服务名称
+      stripPrefix: false                #取消前缀
+    order_microservice:                 #路由名称：订单微服务
+      path: /api/v1/order/**
+      serviceId: order-microservice
+      stripPrefix: false
+    product_microservice:
+      path: /api/v1/product/**
+      serviceId: product-microservice
+      stripPrefix: false
+
+
+logging:
+  config: classpath:logback/logback.xml  # logback 日志配置
