@@ -1,37 +1,47 @@
-package com.learning.springboot;
+package com.learning.springboot.redis.string;
 
-import com.learning.springboot.redis.RedisUtils;
+import com.learning.springboot.redis.RedisStringService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.util.Assert;
 
 @SpringBootTest
 public class TestStringRedis {
 
     @Autowired
-    private RedisUtils redisUtils;
+    private RedisStringService redisStringService;
     @Test
     public void setString() {
-        redisUtils.set("hello","world");
+        redisStringService.set("hello","world");
     }
-
-
-
 
     @Test
     public void batchSetString() {
         String key ;
+        for (int i = 0;i < 1000; i++) {
+            key = "key" + i;
+            redisStringService.set(key, "world" + i);
+        }
+    }
+
+    @Test
+    public void batchDelete() {
+        String key ;
         for (int i = 0;i < 100; i++) {
             key = "key" + i;
-            redisUtils.set(key, "world" + i);
+            redisStringService.delete(key);
         }
     }
 
     @Test
     public void setObj() {
         User user = new User("张三","12800998876");
-        redisUtils.set("user",user.toString());
+        redisStringService.set("user",user.toString());
+    }
+
+    @Test
+    public void setJosn(){
+        String json = "{}";
     }
 
     class User {

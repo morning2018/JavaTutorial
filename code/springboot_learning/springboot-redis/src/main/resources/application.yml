@@ -5,7 +5,7 @@ spring:
   redis:
     database: 0 #数据库索引
     host: 192.168.44.128 #redis地址
-    password:  #密码
+    password: 123456 #密码
     lettuce:
       pool:
         max-active: 8 #最大连接数

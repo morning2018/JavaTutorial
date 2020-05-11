@@ -23,9 +23,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 /**
- * Redis缓存配置类
+ * 功能描述：
+ *  Redis缓存配置类
  * @author morning
- * 2018年7月19日下午5:28:44
+ * @date 2020/5/10 17:17
+ * @version v0.0.1
  */
 @Configuration
 @EnableCaching

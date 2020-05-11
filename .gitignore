@@ -3,3 +3,9 @@
 /code/springboot_learning/springboot-kafaka/target
 /code/java_learning/target
 /code/java_learning/*.iml
+/code/springboot_learning/springboot-redis/target/classes
+/code/springboot_learning/springboot-kafaka/*.iml
+/code/springboot_learning/spring-boot-mvc/*.iml
+/code/springboot_learning/spring-boot-helloworld/*.iml
+.idea
+target
