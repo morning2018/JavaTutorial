@@ -1,0 +1,17 @@
+server:
+  port: 8080
+
+spring:
+  rabbitmq:
+    host: kangpaas-rabbit # 消息队列服务器
+    username: kangpaas    # 消息队列用户
+    password: kangpaas # 消息队列密码
+    port: 5672  # 消息队列端口
+    listener:  # listener
+      simple:
+        retry:
+          max-attempts: 5 # 最大重试次数
+          enabled: true  # 是否开启消费者重试（为false时关闭消费者重试，这时消费端代码异常会一直重复收到消息）
+          initial-interval: 5000 # 重试间隔时间（单位毫秒）
+          multiplier: 2 # 应用于上一重试间隔的乘数
+          stateless: true # 重试是有状态or无状态
