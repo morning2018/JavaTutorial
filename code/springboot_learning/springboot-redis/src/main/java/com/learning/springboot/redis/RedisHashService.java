@@ -18,11 +18,13 @@ import java.util.Set;
 @Component
 public class RedisHashService<V> {
 
-    /**
-     * redisTemplate
-     */
+
     @Autowired
     private RedisTemplate<String, V> redisTemplate;
+
+    public RedisTemplate template() {
+        return redisTemplate;
+    }
 
     /**
      * Hash表添加元素

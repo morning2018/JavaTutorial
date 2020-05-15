@@ -1,7 +1,7 @@
 >Reference:
 >https://spring.io/projects/spring-boot
->https://redis.io/commands/lrem
 >https://redis.io/topics/persistence
+>https://redis.io/commands
 ### springboot-redis搭建
 ### Redis String场景验证
 #### 基本新增，修改，删除

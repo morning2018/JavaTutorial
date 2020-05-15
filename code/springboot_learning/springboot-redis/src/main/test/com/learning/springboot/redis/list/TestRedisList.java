@@ -1,7 +1,7 @@
 package com.learning.springboot.redis.list;
 
 import com.learning.springboot.Application;
-import com.learning.springboot.redis.RedisStringService;
+import com.learning.springboot.redis.RedisListService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -17,7 +17,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class TestRedisList {
     
     @Autowired
-    private RedisStringService<String> redisStringService;
+    private RedisListService<String> redisListService;
 
     @Test
     public void testcase1() {
@@ -34,7 +34,7 @@ public class TestRedisList {
         //print(redisUtils.rightPush("menuList","rightPush1"));
 
         // 尾部添加多个元素
-        print(redisStringService.rightPushAll("menuList","list1","list2","list3"));
+        print(redisListService.rightPushAll("menuList","list1","list2","list3"));
 
         // 头部添加多个元素
         //print(redisUtils.leftPushAll("menuList","left1","left2","left3"));
