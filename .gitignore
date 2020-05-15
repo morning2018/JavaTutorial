@@ -9,3 +9,4 @@
 /code/springboot_learning/spring-boot-helloworld/*.iml
 .idea
 target
+/code/springboot_learning/springboot-rabbitmq/*.iml

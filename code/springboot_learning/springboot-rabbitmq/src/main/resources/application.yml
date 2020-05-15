@@ -3,9 +3,9 @@ server:
 
 spring:
   rabbitmq:
-    host: kangpaas-rabbit # 消息队列服务器
-    username: kangpaas    # 消息队列用户
-    password: kangpaas # 消息队列密码
+    host: 192.168.44.128 # 消息队列服务器
+    username: guest    # 消息队列用户
+    password: guest # 消息队列密码
     port: 5672  # 消息队列端口
     listener:  # listener
       simple:
