@@ -1,7 +1,7 @@
 package com.demo.springboot;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.web.support.SpringBootServletInitializer;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 /**
  *  通过继承SpringBootServletInitializer类 Spring Boot应用能够使用嵌入的Spring上下文来注册配置，
