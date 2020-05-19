@@ -31,4 +31,9 @@ public class RabbitMqConfig {
     public Queue emailQueue() {
         return new Queue(RabbitQueue.QUEUE_MAIL);
     }
+
+    @Bean
+    public Queue loginLogQueue() {
+        return new Queue(RabbitQueue.QUEUE_LOGING_LOG);
+    }
 }

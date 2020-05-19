@@ -23,4 +23,11 @@ public final class RabbitQueue {
      * 登录日志queue
      */
     public static final String QUEUE_LOGING_LOG = "queue.login.log";
+
+
+    public static final String QUEUE_TOPIC_MSG = "queue.topic.msg";
+
+    public static final String QUEUE_TOPIC_MSG1 = "queue.topic.msg1";
+
+    public static final String QUEUE_TOPIC_MSG2 = "queue.topic.msg2";
 }

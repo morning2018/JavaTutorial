@@ -27,7 +27,7 @@ public class MyAckReceiver2 {
     @RabbitHandler
     public void process(String sendMsg, Channel channel, Message message) {
 
-        System.out.println("AckReceiver  : 收到发送消息 " + sendMsg.toString() + ",收到消息时间"
+        System.out.println("MyAckReceiver2  : 收到发送消息 " + sendMsg.toString() + ",收到消息时间"
                 + LocalDateTime.now(ZoneId.systemDefault()));
 
         MessageObj messageObj = JSON.parseObject(sendMsg, MessageObj.class);

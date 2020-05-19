@@ -118,7 +118,7 @@ public class TransactionService {
             String message = new String(resp.getBody(), "UTF-8");
             System.out.println("收到消息：" + message);
             //消息拒绝
-            // channel.basicReject(resp.getEnvelope().getDeliveryTag(), true);
+            //channel.basicReject(resp.getEnvelope().getDeliveryTag(), true);
             // 消息确认
             channel.basicAck(resp.getEnvelope().getDeliveryTag(), false);
             // 提交事务

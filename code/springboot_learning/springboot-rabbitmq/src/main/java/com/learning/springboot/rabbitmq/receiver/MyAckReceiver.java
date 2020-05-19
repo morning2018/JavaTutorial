@@ -26,7 +26,7 @@ public class MyAckReceiver {
     @RabbitHandler
     public void process(String sendMsg, Channel channel, Message message) {
 
-        System.out.println("AckReceiver  : 收到发送消息 " + sendMsg + ",收到消息时间"
+        System.out.println("MyAckReceiver  : 收到发送消息 " + sendMsg + ",收到消息时间"
                 + LocalDateTime.now(ZoneId.systemDefault()));
 
         try {

@@ -45,14 +45,15 @@ public class SendController {
     private ConfirmService confirmService;
 
     /**
-     * 单条消息发送
-     *
+     * 发送一条消息到一个队列
+     * 采用默认Exchange(direct)
+     * 如果有多个消费者，只能被消费一次
      * @return
      */
     @GetMapping(value = "sendEmail")
     public String sendEmail() {
         String content = "发送信息给www@126.com,时间：" + System.currentTimeMillis();
-        //发送默认交换机对应的的队列kinson
+        //发送默认交换机(direct)对应的队列RabbitQueue.QUEUE_MAIL
         rabbitTemplate.convertAndSend(RabbitQueue.QUEUE_MAIL, content);
         return content;
     }
@@ -71,8 +72,9 @@ public class SendController {
     }
 
     /**
-     * 发送多条消息到一个队列，该队列有多个消费者
-     *
+     * 发送多条消息到一个队列RabbitQueue.QUEUE_MAIL，该队列有多个消费者
+     * 采用默认Exchange(direct)
+     * 每条消息只会被消费一次
      * @return
      */
     @GetMapping(value = "sendMore")
@@ -82,7 +84,7 @@ public class SendController {
         for (int i = 0; i < 100; i++) {
             String content = "第" + (i + 1) + "次发送 Date:" + System.currentTimeMillis();
             //发送默认交换机对应的的队列kinson,此时有两个消费者MyReceiver1和MyReceiver2,每条消息只会被消费一次
-            rabbitTemplate.convertAndSend("kinson", content);
+            rabbitTemplate.convertAndSend(RabbitQueue.QUEUE_MAIL, content);
             result.add(content);
         }
         return String.join("<br/>", result);
@@ -99,10 +101,10 @@ public class SendController {
         //发送10条数据
         for (int i = 0; i < 10; i++) {
             String content = "第" + (i + 1) + "次发送 Date:" + System.currentTimeMillis();
-            //发送默认交换机对应的的队列kinson
-            rabbitTemplate.convertAndSend("kinson", content);
-            //发送默认交换机对应的的队列kinson2
-            rabbitTemplate.convertAndSend("kinson2", content);
+            //发送默认交换机对应的的队列QUEUE_MAIL
+            rabbitTemplate.convertAndSend(RabbitQueue.QUEUE_MAIL, content);
+            //发送默认交换机对应的的队列QUEUE_LOGING_LOG
+            rabbitTemplate.convertAndSend(RabbitQueue.QUEUE_LOGING_LOG, content);
             result.add(content);
         }
         return String.join("<br/>", result);
