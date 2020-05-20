@@ -1,1 +1,0 @@
-1.使用springboot整合mybatis,并且mapper的实现使用xml配置的方式

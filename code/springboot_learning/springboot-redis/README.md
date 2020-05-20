@@ -2,6 +2,12 @@
 >https://spring.io/projects/spring-boot
 >https://redis.io/topics/persistence
 >https://redis.io/commands
+
+### 概述
+技术点：
+- redis 5.0.5
+- springboot 2.2.6
+
 ### springboot-redis搭建
 ### Redis String场景验证
 #### 基本新增，修改，删除

@@ -8,6 +8,11 @@
 >https://github.com/fujiangwei/springboot-learn/tree/master/springboot-rabbitmq
 >https://github.com/rabbitmq/rabbitmq-server/blob/master/docs/rabbitmq.conf.example
 >https://www.cnblogs.com/vipstone/p/9350075.html
+### 概述
+技术点：
+- rabbitmq 3.8.3
+- springboot 2.2.6
+
 ### springboot-rabbit搭建
  #### docker安装rabbitmq
  #### java实现
