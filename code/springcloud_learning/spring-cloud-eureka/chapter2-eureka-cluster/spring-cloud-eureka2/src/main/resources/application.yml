@@ -1,0 +1,30 @@
+server:
+  #服务端口号
+  port: 18081
+
+spring:
+  application:
+    #服务实例名称(集群模式下，服务名称要一致)
+    name: eureka-microservice
+
+eureka:
+  client:
+    # 从注册中心拉取服务列表，默认为true(集群模式下，注册中心也需要从其他注册中心拉取服务列表)
+    fetch-registry: true
+    # 将自己注册到服务中心，默认为true(集群模式下，需要将自己注册到其他注册中心)
+    register-with-eureka: true
+    service-url:
+      # 将本身注册到除自己以外的其他的注册中心
+      defaultZone: http://server1:18080/eureka/,http://server3:18082/eureka/
+  instance:
+    # 该服务实例所在主机名，需要映射hostname
+    hostname: server2
+    # eureka server 管理界面显示的服务状态
+    #instance-id: ${eureka.instance.hostname}:${server.port}
+    # 使用ip地址进行注册
+    #prefer-ip-address: true
+    # 默认ip地址
+    #ip-address: ${EUREKA_IP:${eureka.instance.hostname}}
+  server:
+    # 开发测试环境下，自我保护机制关闭，防止频繁的重启与关闭，导致使用的是老的服务(生产环境使用默认的true)
+    enable-self-preservation: true
