@@ -10,3 +10,4 @@
 .idea
 target
 /code/springboot_learning/springboot-rabbitmq/*.iml
+*.iml
