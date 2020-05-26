@@ -23,7 +23,8 @@
 
 ### eureka工作原理原理
 - eureka server
-  
+  - 服务注册表
+  - 心跳机制
 - eureka client
 - 服务注册
 
