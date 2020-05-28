@@ -6,7 +6,7 @@
 	<version>0.0.1-SNAPSHOT</version>
  </parent>
  <groupId>com.learning</groupId>
-  <artifactId>spring-cloud-zuul</artifactId>
+  <artifactId>spring-cloud-zuul-gateway</artifactId>
   <packaging>jar</packaging>
  
 	<properties>
@@ -15,15 +15,15 @@
 	</properties>
 
 	<dependencies>
-
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-zuul</artifactId>
-		</dependency>
-
+		<!-- 支持eureka client能力 -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
+		<!--支持zuul能力-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-zuul</artifactId>
 		</dependency>
 	</dependencies>
 	

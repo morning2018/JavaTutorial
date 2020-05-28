@@ -3,6 +3,11 @@
 >https://github.com/Netflix/zuul/wiki/How-it-Works
 >https://www.springcloud.cc/spring-cloud-greenwich.html#_circuit_breaker_hystrix_dashboard
 
+### zuul环境搭建
+- pom
+
+### zuul的路由作用
+
 
 ### Zuul的主要作用
 * 认证方式

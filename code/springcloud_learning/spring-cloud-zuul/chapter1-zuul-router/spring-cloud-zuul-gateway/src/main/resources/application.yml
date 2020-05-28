@@ -103,9 +103,9 @@ eureka:
     service-url:
       # eureka 注册地址
       defaultZone: http://127.0.0.1:8091/eureka
-    # 指示从eureka服务器获取注册表信息的频率（s）
-    registry-fetch-interval-seconds: 5
-    # 从 eureka 获取注册信息
+    # 是否从eureka server 获取注册信息
     fetch-registry: true
-    # 注册到 eureka
+    # 指示从eureka server获取注册表信息的频率（s）
+    registry-fetch-interval-seconds: 5
+    # 注册到 eureka server
     register-with-eureka: true

@@ -1,0 +1,18 @@
+server:
+  port: 18080 #服务端口号
+
+eureka:
+  client:
+    fetch-registry: false   #是否从服务端获取服务清单, 默认true，这里作为服务端，不需要再获取
+    register-with-eureka: false   #是否注册自己, 默认true，这里作为服务端，不需要再注册
+    should-unregister-on-shutdown: false   #client在shutdown情况下，是否显示从注册中心注销
+  instance:
+    hostname: localhost # 该服务实例所在主机名
+    lease-expiration-duration-in-seconds: 300 # 指示eureka服务器在删除此实例之前收到最后一次心跳之后等待的时间（s）
+  server:
+    enable-self-preservation: false # 启用自我保护机制，默认为true
+
+
+spring:
+  application:
+    name: eureka-microservice #服务实例名称
