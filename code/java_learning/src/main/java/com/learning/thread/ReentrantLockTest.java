@@ -1,5 +1,6 @@
 package com.learning.thread;
 
+import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
@@ -14,7 +15,7 @@ public class ReentrantLockTest implements Runnable {
      * 票数
      */
     private static int ticket = 30;
-    private ReentrantLock lock = new ReentrantLock();
+    private Lock lock = new ReentrantLock();
     public void run() {
         while (ticket > 0) {
             try {
