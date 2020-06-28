@@ -53,7 +53,6 @@ public class DeadLockTest {
                         System.out.println(name + "get 1st lock");
                     }
                 }
-            }
         }
     }
 }
