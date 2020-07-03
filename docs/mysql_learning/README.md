@@ -1,3 +1,8 @@
+#MySQL基础
+- 什么是OLTP和OLAP?
+  - OLTP(on-line transaction processing) 联机事务处理
+  - OLAP(On-Line Analytical Processing) 联机分析处理
+
 - 事务并发问题
   - 脏读
     - 线程A读取了事务B更新的数据，然后事务B回滚了，导致事务A读的数据是脏数据。
