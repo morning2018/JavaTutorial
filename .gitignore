@@ -12,3 +12,4 @@ target
 /code/springboot_learning/springboot-rabbitmq/*.iml
 *.iml
 /code/springcloud_learning/spring-cloud-zuul/*.iml
+/code/springcloud_learning/spring-cloud-eureka/chapter1-eureka-server/spring-cloud-eureka-server/*.iml
