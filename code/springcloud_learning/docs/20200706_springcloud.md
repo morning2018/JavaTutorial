@@ -9,6 +9,9 @@
 &nbsp;&nbsp;&nbsp;&nbsp;Eureka是Netflix公司开源的一款服务注册与发现的产品，基于restful实现，是springcloud体系中重要的组件之一。Eureka包括了EurekaServer和EurekaCLient两部分组成。目前Eureka提供了1.x的版本和2.x的版本，在2018年7月Netflix已经宣布停止维护2.x的版本。
 - 入门示例
 ### Eureka实现原理
+- 原理图
+
+  ![](imgs/20200706_Eureka-Eureka实现原理.svg)
 
 - **服务注册**
   - Service Provider(EurekaClient)启动时，会将自身服务注册到Eureka Server的注册表中，服务信息包括：服务名称，实例标识，服务状态信息等。
@@ -46,8 +49,10 @@
   - EurekaClient优先从同一个Zone的EurekaServer进行注册服务或拉取服务注册表。e的EurekaServer。
   - 当EurekaClient无法从同一个Zone的EurekaServer注册或拉取服务时，会自动切换到其他节点。
 ### Eureka配置优化
-  - 
+  -
 ### Eureka VS Zookeeper
+
+
 
 
 ## Zuul网关
