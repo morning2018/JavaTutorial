@@ -35,6 +35,9 @@
   - **恢复机制**：当网络恢复，续约正常，自我保护机制自动关闭，注册信息会同步到其他EurekaServer节点。
   - **问题**：自我保护机制阶段，正好有服务正常剔除，但是由于保护机制被保留的信息，会导致EurekaClient调用一个失效的服务。
     - **解决方式**：EurekaClient端容错机制，进行重试与断路器机制，保证调用到失效的服务也不会出现服务超时，雪崩等问题。
+- **三级缓存机制**
+  - register -> readWriteCacheMap -> readonlyCacheMap
+  - 引入原因：提供高可用能力，提供读并发能力
 
 ### Eureka高可用实现原理
 - 原理图
@@ -49,8 +52,24 @@
   - EurekaClient优先从同一个Zone的EurekaServer进行注册服务或拉取服务注册表。e的EurekaServer。
   - 当EurekaClient无法从同一个Zone的EurekaServer注册或拉取服务时，会自动切换到其他节点。
 ### Eureka配置优化
-  -
+- 自我保护
+  ```
+  eureka.server.enable-self-preservation：
+  默认配置为：true
+  开发环境：建议配置为false,降低在开发调试时缓存对环境的影响，提升开发效率。
+  生产环境：建议配置为，提升环境的高可用
+  ```
+
+
 ### Eureka VS Zookeeper
+
+|对比项|Eureka|Zookeeper|说明|
+|----|----|----|----|
+|CAP原则|AP原则|CP原则||
+|可用性|支持高可用，集群节点只要一个节点可用，服务就可用|不支持高可用，在选主阶段集群不提供服务||
+|强一致性|不支持，可能存在节点数据不一致的情况|支持强一致性，||
+|同步模式|P2P对等模式|Leader选主模式||
+|架构模式|去中心化架构|master/salver模式||
 
 
 
