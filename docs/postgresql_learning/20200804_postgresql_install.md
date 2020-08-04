@@ -132,7 +132,7 @@
   sudo systemctl status firewalld.service
   ```
 - 客户端连接
-  ![](20200804_postgresql_conn.png)
+  ![](imgs/20200804_postgresql_conn.png)
 
 
 
