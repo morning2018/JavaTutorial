@@ -120,6 +120,10 @@
   create schema zdaastest authorization zdaastest;
   alter user zdaastest createdb createrole;
   ```
+- 修改用户密码
+  ```
+  alter user zdaastest with password 'zdaastest';
+  ```
 ## 客户端登录
 - 防火墙开放端口（或者关闭防火墙）
   ```
@@ -134,7 +138,27 @@
 - 客户端连接
   ![](imgs/20200804_postgresql_conn.png)
 
+## 配置优化
+修改文件/var/lib/pgsql/10/data/postgresql.conf中如下参数：
+```
+show max_connections; -- 2000
+show fsync; -- off
+show shared_buffers; -- 1GB
+show work_mem; -- 10MB
+show effective_cache_size; -- 4GB
+show maintenance_work_mem; -- 512MB
+show checkpoint_completion_target; --0.9
+show commit_delay; -- 0
+SHOW commit_siblings; --5
+```
+## 常用操作
+```
+-- 删除表数据
+TRUNCATE table ssperf0,ssperf1,ssperf2,ssperf3;
 
+-- 查询数据库信息
+select * from pg_database ; 
+```
 
 >reference:
 https://www.postgresql.org/download/linux/redhat/
