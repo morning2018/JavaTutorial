@@ -9,9 +9,10 @@ import com.google.common.hash.PrimitiveSink;
 import java.nio.charset.Charset;
 
 /**
- *  guava bloom filter
- *  布隆过滤器验证存在，则可能不存在
- *  布隆过滤器验证不存在，则一定不存在
+ * guava bloom filter
+ * 布隆过滤器验证存在，则可能不存在
+ * 布隆过滤器验证不存在，则一定不存在
+ *
  * @author weiyt
  * @date 2020/9/10 13:33
  * @since 0.0.1-SNAPSHOT
@@ -28,7 +29,8 @@ public class GuavaBloomFiter {
     private BloomFilter<String> bloom = BloomFilter.create(Funnels.stringFunnel(Charsets.UTF_8), size);
 
     /**
-     添加元素
+     * 添加元素
+     *
      * @param str
      */
     public void put(String str) {
@@ -37,6 +39,7 @@ public class GuavaBloomFiter {
 
     /**
      * 判断是否存在
+     *
      * @param str
      * @return
      */
@@ -48,13 +51,13 @@ public class GuavaBloomFiter {
     public static void main(String[] args) {
         GuavaBloomFiter blBoolmTest = new GuavaBloomFiter();
         String mystr = "GuavaBloomFiterGuavaBloomFiterGuavaBloomFiterGuavaBloomFiterGuavaBloomFiterGuavaBloomFiterGuavaBloomFiterGuavaBloomFiterGuavaBloomFiterGuavaBloomFiterGuavaBloomFiterGuavaBloomFiter";
-        for (int i =0;i<10000000;i++) {
+        for (int i = 0; i < 10000000; i++) {
             blBoolmTest.put(mystr + i);
         }
-         for (int i =0;i<1000000;i++) {
-            String str = mystr + (i*100);
+        for (int i = 0; i < 1000000; i++) {
+            String str = mystr + (i * 100);
             System.out.println(str + "已添加：" + blBoolmTest.mightContain(str));
-         }
+        }
     }
 
 }
