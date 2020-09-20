@@ -1,4 +1,4 @@
-package com.learning.multithrad.thread.productsystem;
+package com.learning.multithrad.practice.productsystem;
 
 /**
  * 功能描述：

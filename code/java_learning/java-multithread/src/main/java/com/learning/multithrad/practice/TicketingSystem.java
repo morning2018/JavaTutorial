@@ -1,4 +1,4 @@
-package com.learning.multithrad.thread;
+package com.learning.multithrad.practice;
 
 /**
  * 功能描述：

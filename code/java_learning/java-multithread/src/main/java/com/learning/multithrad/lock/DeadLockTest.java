@@ -1,4 +1,4 @@
-package com.learning.multithrad.thread;
+package com.learning.multithrad.lock;
 /**
  * 死锁：
  *  针对多个资源，多个线程进行争抢，当顺序不正当时可能会产生死锁

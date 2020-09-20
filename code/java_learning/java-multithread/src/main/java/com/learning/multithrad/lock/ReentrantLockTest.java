@@ -1,4 +1,6 @@
-package com.learning.multithrad.thread;
+package com.learning.multithrad.lock;
+
+import com.learning.multithrad.thread.RunnableTest;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;

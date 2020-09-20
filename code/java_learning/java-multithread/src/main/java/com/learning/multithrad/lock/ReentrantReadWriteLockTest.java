@@ -1,4 +1,4 @@
-package com.learning.multithrad.thread;
+package com.learning.multithrad.lock;
 
 import java.util.HashMap;
 import java.util.Map;
