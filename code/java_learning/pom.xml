@@ -9,5 +9,6 @@
     <modules>
         <module>java-basic</module>
         <module>java-multithread</module>
+        <module>java-designpatterns</module>
     </modules>
 </project>

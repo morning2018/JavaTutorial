@@ -3,9 +3,14 @@
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.learning</groupId>
-	<artifactId>designpatterns-learning</artifactId>
+	<artifactId>java-designpatterns</artifactId>
 	<version>0.0.1</version>
 
+	<parent>
+		<groupId>com.learning</groupId>
+		<version>0.0.1</version>
+		<artifactId>java-learning</artifactId>
+	</parent>
     <dependencies>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
