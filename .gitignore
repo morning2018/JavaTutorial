@@ -13,3 +13,6 @@ target
 *.iml
 /code/springcloud_learning/spring-cloud-zuul/*.iml
 /code/springcloud_learning/spring-cloud-eureka/chapter1-eureka-server/spring-cloud-eureka-server/*.iml
+/code/springboot_learning/springboot-helloworld/*.iml
+/code/springboot_learning/springboot-mvc/*.iml
+/code/springboot_learning/springboot-mybatis-xml/*.iml

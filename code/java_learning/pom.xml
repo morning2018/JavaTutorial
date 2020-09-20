@@ -5,32 +5,9 @@
 	<groupId>com.learning</groupId>
 	<artifactId>java-learning</artifactId>
 	<version>0.0.1</version>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>8</source>
-                    <target>8</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-
-    <dependencies>
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<version>1.16.18</version>
-		</dependency>
-		<!--单元测试
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.13</version>
-		</dependency>
-		-->
-	</dependencies>
-
+    <packaging>pom</packaging>
+    <modules>
+        <module>java-basic</module>
+        <module>java-multithread</module>
+    </modules>
 </project>

@@ -16,6 +16,11 @@
         <fastjson.version>1.2.47</fastjson.version>
     </properties>
 
+    <modules>
+        <module>springboot-helloworld</module>
+        <module>springboot-mvc</module>
+        <module>springboot-mybatis-xml</module>
+    </modules>
     <dependencies>
         <!--lombok简化POJO-->
         <dependency>
