@@ -42,7 +42,7 @@ public class WebApplication {
 	}
 	
 	@Bean
-	@Scope("com.learning.designpattern.prototype")
+	@Scope("com.learning.designpattern.creational.singleton.prototype")
 	public Feign.Builder feignBuilder() {
 		return Feign.builder();
 	}
