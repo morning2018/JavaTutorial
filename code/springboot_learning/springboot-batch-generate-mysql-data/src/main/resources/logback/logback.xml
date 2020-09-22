@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+    <contextName>logback</contextName>
+    <property name="log.path" value="logs" />
+    <property name="log.historyPath" value="logs" />
+    <!--输出到控制台-->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!--输出到文件-->
+    <appender name="loaddata" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}/zdaas-jdbc-24.txt</file><!-- 当前的日志文件存放路径 -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!-- 历史日志文件的存放路径和名称 -->
+            <fileNamePattern>${log.historyPath}/loaddata.%d{yyyy-MM-dd}.%i.gz</fileNamePattern>
+            <maxHistory>30</maxHistory>
+            <maxFileSize>1GB</maxFileSize>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="info">
+        <appender-ref ref="console" />
+    </root>
+
+    <logger name="GENERATE-SQL" level="debug" additivity="false">
+        <appender-ref ref="loaddata" />
+        <appender-ref ref="console" />
+    </logger>
+
+</configuration>
