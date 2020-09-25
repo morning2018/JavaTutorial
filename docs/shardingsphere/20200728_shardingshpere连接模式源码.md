@@ -127,4 +127,35 @@ private QueryResult getQueryResult(final StatementExecuteUnit statementExecuteUn
 
 
 # 结论
--
+连接数消耗计算原理： 
+
+max.connections.size.per.query控制真实的连接数的消耗：
+
+ max.connections.size.per.query会影响连接模式，算法如下：
+
+ConnectionMode connectionMode = maxConnectionsSizePerQuery < sqlUnits.size() ? ConnectionMode.CONNECTION_STRICTLY : ConnectionMode.MEMORY_STRICTLY;
+
+ max.connections.size.per.query和sqlUnits（单数据源的真实sql数）会影响连接数，算法：
+
+ int desiredPartitionSize = Math.max(0 == sqlUnits.size() % maxConnectionsSizePerQuery ? sqlUnits.size() / maxConnectionsSizePerQuery : sqlUnits.size() / maxConnectionsSizePerQuery + 1, 1)
+
+示例：
+
+| maxConnectionsSizePerQuery | dsSize | tableSizePerDs | connectionMode      | 实际连接数 |
+| -------------------------- | ------ | -------------- | ------------------- | ---------- |
+| 200                        | 24     | 32             | MEMORY_STRICTLY     |            |
+| 1                          | 24     | 32             | CONNECTION_STRICTLY | 1          |
+|                            |        |                |                     |            |
+
+
+
+connectionMode 
+
+
+
+目前测试了 max.connections.size.per.query=200，24分库32分表，能支持，但是查询性能很慢
+
+
+
+
+

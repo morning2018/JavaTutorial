@@ -1,4 +1,4 @@
-package com.learning.springboot.generatesql;
+package com.learning.springboot.generatedata;
 
 import lombok.extern.slf4j.Slf4j;
 

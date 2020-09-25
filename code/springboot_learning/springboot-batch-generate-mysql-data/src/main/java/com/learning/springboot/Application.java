@@ -1,6 +1,7 @@
 package com.learning.springboot;
 
-import com.learning.springboot.generatesql.BatchGenerateData;
+import com.learning.springboot.generatedata.BatchGenerateCustOrder;
+import com.learning.springboot.generatedata.BatchGenerateData;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,16 +19,17 @@ public class Application {
 	/**
 	 * 按照24取余进行生成
 	 */
-	private static final int NUM = 500 * 10000 * 24;
+	private static final long NUM = 500 * 10000 * 24;
 
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
 		long start = System.currentTimeMillis();
-		log.info("开始时间:" + start);
 		BatchGenerateData batchGenerateSql = new BatchGenerateData();
+		BatchGenerateCustOrder batchGenerateCustOrder = new BatchGenerateCustOrder();
+		log.info("开始时间:" + start);
 		int sharding = 24;
-		int modValue = 0;
-		batchGenerateSql.generate(NUM, sharding, modValue);
+		//batchGenerateSql.generate(NUM, sharding, modValue);
+		batchGenerateCustOrder.generate(NUM, sharding);
 		long end = System.currentTimeMillis();
 		log.info("结束时间：" + end);
 		log.info("花费时间(ms)：" + (end-start));

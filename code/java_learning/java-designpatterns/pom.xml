@@ -6,6 +6,9 @@
 	<artifactId>java-designpatterns</artifactId>
 	<version>0.0.1</version>
 
+	<properties>
+		
+	</properties>
 	<parent>
 		<groupId>com.learning</groupId>
 		<version>0.0.1</version>

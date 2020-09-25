@@ -17,3 +17,5 @@ target
 /code/springboot_learning/springboot-mvc/*.iml
 /code/springboot_learning/springboot-mybatis-xml/*.iml
 /code/springboot_learning/.mvn
+/logs
+logs

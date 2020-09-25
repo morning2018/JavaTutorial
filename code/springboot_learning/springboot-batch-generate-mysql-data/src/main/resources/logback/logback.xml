@@ -16,7 +16,272 @@
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
             <!-- 历史日志文件的存放路径和名称 -->
             <fileNamePattern>${log.historyPath}/loaddata.%d{yyyy-MM-dd}.%i.gz</fileNamePattern>
-            <maxHistory>30</maxHistory>
+            <maxHistory>10</maxHistory>
+            <maxFileSize>1GB</maxFileSize>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%msg%n</pattern>
+        </encoder>
+    </appender>
+    <!--输出到文件-->
+    <appender name="custorder1" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}/zdaas-jdbc-custorder-01.txt</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${log.historyPath}/zdaas-jdbc-custorder-01.%d{yyyy-MM-dd}.%i.gz</fileNamePattern>
+            <maxHistory>10</maxHistory>
+            <maxFileSize>1GB</maxFileSize>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="custorder2" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}/zdaas-jdbc-custorder-02.txt</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${log.historyPath}/zdaas-jdbc-custorder-02.%d{yyyy-MM-dd}.%i.gz</fileNamePattern>
+            <maxHistory>10</maxHistory>
+            <maxFileSize>1GB</maxFileSize>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="custorder3" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}/zdaas-jdbc-custorder-03.txt</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${log.historyPath}/zdaas-jdbc-custorder-03.%d{yyyy-MM-dd}.%i.gz</fileNamePattern>
+            <maxHistory>10</maxHistory>
+            <maxFileSize>1GB</maxFileSize>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="custorder4" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}/zdaas-jdbc-custorder-04.txt</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${log.historyPath}/zdaas-jdbc-custorder-04.%d{yyyy-MM-dd}.%i.gz</fileNamePattern>
+            <maxHistory>10</maxHistory>
+            <maxFileSize>1GB</maxFileSize>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="custorder5" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}/zdaas-jdbc-custorder-05.txt</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${log.historyPath}/zdaas-jdbc-custorder-05.%d{yyyy-MM-dd}.%i.gz</fileNamePattern>
+            <maxHistory>10</maxHistory>
+            <maxFileSize>1GB</maxFileSize>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="custorder6" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}/zdaas-jdbc-custorder-06.txt</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${log.historyPath}/zdaas-jdbc-custorder-06.%d{yyyy-MM-dd}.%i.gz</fileNamePattern>
+            <maxHistory>10</maxHistory>
+            <maxFileSize>1GB</maxFileSize>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="custorder7" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}/zdaas-jdbc-custorder-07.txt</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${log.historyPath}/zdaas-jdbc-custorder-07.%d{yyyy-MM-dd}.%i.gz</fileNamePattern>
+            <maxHistory>10</maxHistory>
+            <maxFileSize>1GB</maxFileSize>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="custorder8" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}/zdaas-jdbc-custorder-08.txt</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${log.historyPath}/zdaas-jdbc-custorder-08.%d{yyyy-MM-dd}.%i.gz</fileNamePattern>
+            <maxHistory>10</maxHistory>
+            <maxFileSize>1GB</maxFileSize>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="custorder9" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}/zdaas-jdbc-custorder-09.txt</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${log.historyPath}/zdaas-jdbc-custorder-09.%d{yyyy-MM-dd}.%i.gz</fileNamePattern>
+            <maxHistory>10</maxHistory>
+            <maxFileSize>1GB</maxFileSize>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="custorder10" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}/zdaas-jdbc-custorder-10.txt</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${log.historyPath}/zdaas-jdbc-custorder-10.%d{yyyy-MM-dd}.%i.gz</fileNamePattern>
+            <maxHistory>10</maxHistory>
+            <maxFileSize>1GB</maxFileSize>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="custorder11" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}/zdaas-jdbc-custorder-11.txt</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${log.historyPath}/zdaas-jdbc-custorder-11.%d{yyyy-MM-dd}.%i.gz</fileNamePattern>
+            <maxHistory>10</maxHistory>
+            <maxFileSize>1GB</maxFileSize>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="custorder12" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}/zdaas-jdbc-custorder-12.txt</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${log.historyPath}/zdaas-jdbc-custorder-12.%d{yyyy-MM-dd}.%i.gz</fileNamePattern>
+            <maxHistory>10</maxHistory>
+            <maxFileSize>1GB</maxFileSize>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="custorder13" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}/zdaas-jdbc-custorder-13.txt</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${log.historyPath}/zdaas-jdbc-custorder-13.%d{yyyy-MM-dd}.%i.gz</fileNamePattern>
+            <maxHistory>10</maxHistory>
+            <maxFileSize>1GB</maxFileSize>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="custorder14" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}/zdaas-jdbc-custorder-14.txt</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${log.historyPath}/zdaas-jdbc-custorder-14.%d{yyyy-MM-dd}.%i.gz</fileNamePattern>
+            <maxHistory>10</maxHistory>
+            <maxFileSize>1GB</maxFileSize>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="custorder15" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}/zdaas-jdbc-custorder-15.txt</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${log.historyPath}/zdaas-jdbc-custorder-15.%d{yyyy-MM-dd}.%i.gz</fileNamePattern>
+            <maxHistory>10</maxHistory>
+            <maxFileSize>1GB</maxFileSize>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="custorder16" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}/zdaas-jdbc-custorder-16.txt</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${log.historyPath}/zdaas-jdbc-custorder-16.%d{yyyy-MM-dd}.%i.gz</fileNamePattern>
+            <maxHistory>10</maxHistory>
+            <maxFileSize>1GB</maxFileSize>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="custorder17" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}/zdaas-jdbc-custorder-17.txt</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${log.historyPath}/zdaas-jdbc-custorder-17.%d{yyyy-MM-dd}.%i.gz</fileNamePattern>
+            <maxHistory>10</maxHistory>
+            <maxFileSize>1GB</maxFileSize>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="custorder18" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}/zdaas-jdbc-custorder-18.txt</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${log.historyPath}/zdaas-jdbc-custorder-18.%d{yyyy-MM-dd}.%i.gz</fileNamePattern>
+            <maxHistory>10</maxHistory>
+            <maxFileSize>1GB</maxFileSize>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="custorder19" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}/zdaas-jdbc-custorder-19.txt</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${log.historyPath}/zdaas-jdbc-custorder-19.%d{yyyy-MM-dd}.%i.gz</fileNamePattern>
+            <maxHistory>10</maxHistory>
+            <maxFileSize>1GB</maxFileSize>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="custorder20" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}/zdaas-jdbc-custorder-20.txt</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${log.historyPath}/zdaas-jdbc-custorder-20.%d{yyyy-MM-dd}.%i.gz</fileNamePattern>
+            <maxHistory>10</maxHistory>
+            <maxFileSize>1GB</maxFileSize>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="custorder21" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}/zdaas-jdbc-custorder-21.txt</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${log.historyPath}/zdaas-jdbc-custorder-21.%d{yyyy-MM-dd}.%i.gz</fileNamePattern>
+            <maxHistory>10</maxHistory>
+            <maxFileSize>1GB</maxFileSize>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="custorder22" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}/zdaas-jdbc-custorder-22.txt</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${log.historyPath}/zdaas-jdbc-custorder-22.%d{yyyy-MM-dd}.%i.gz</fileNamePattern>
+            <maxHistory>10</maxHistory>
+            <maxFileSize>1GB</maxFileSize>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="custorder23" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}/zdaas-jdbc-custorder-23.txt</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${log.historyPath}/zdaas-jdbc-custorder-23.%d{yyyy-MM-dd}.%i.gz</fileNamePattern>
+            <maxHistory>10</maxHistory>
+            <maxFileSize>1GB</maxFileSize>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="custorder24" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}/zdaas-jdbc-custorder-24.txt</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${log.historyPath}/zdaas-jdbc-custorder-24.%d{yyyy-MM-dd}.%i.gz</fileNamePattern>
+            <maxHistory>10</maxHistory>
             <maxFileSize>1GB</maxFileSize>
         </rollingPolicy>
         <encoder>
@@ -32,5 +297,109 @@
         <appender-ref ref="loaddata" />
         <appender-ref ref="console" />
     </logger>
+    <logger name="CustOrder1" level="debug" additivity="false">
+        <appender-ref ref="custorder1" />
+        <appender-ref ref="console" />
+    </logger>
+    <logger name="CustOrder2" level="debug" additivity="false">
+        <appender-ref ref="custorder2" />
+        <appender-ref ref="console" />
+    </logger>
+
+
+    <logger name="CustOrder3" level="debug" additivity="false">
+        <appender-ref ref="custorder3" />
+        <appender-ref ref="console" />
+    </logger>
+    <logger name="CustOrder4" level="debug" additivity="false">
+        <appender-ref ref="custorder4" />
+        <appender-ref ref="console" />
+    </logger>
+    <logger name="CustOrder5" level="debug" additivity="false">
+        <appender-ref ref="custorder5" />
+        <appender-ref ref="console" />
+    </logger>
+    <logger name="CustOrder6" level="debug" additivity="false">
+        <appender-ref ref="custorder6" />
+        <appender-ref ref="console" />
+    </logger>
+    <logger name="CustOrder7" level="debug" additivity="false">
+        <appender-ref ref="custorder7" />
+        <appender-ref ref="console" />
+    </logger>
+    <logger name="CustOrder8" level="debug" additivity="false">
+        <appender-ref ref="custorder8" />
+        <appender-ref ref="console" />
+    </logger>
+    <logger name="CustOrder9" level="debug" additivity="false">
+        <appender-ref ref="custorder9" />
+        <appender-ref ref="console" />
+    </logger>
+    <logger name="CustOrder10" level="debug" additivity="false">
+        <appender-ref ref="custorder10" />
+        <appender-ref ref="console" />
+    </logger>
+    <logger name="CustOrder11" level="debug" additivity="false">
+        <appender-ref ref="custorder11" />
+        <appender-ref ref="console" />
+    </logger>
+    <logger name="CustOrder12" level="debug" additivity="false">
+        <appender-ref ref="custorder12" />
+        <appender-ref ref="console" />
+    </logger>
+
+    <logger name="CustOrder13" level="debug" additivity="false">
+        <appender-ref ref="custorder13" />
+        <appender-ref ref="console" />
+    </logger>
+    <logger name="CustOrder14" level="debug" additivity="false">
+        <appender-ref ref="custorder14" />
+        <appender-ref ref="console" />
+    </logger>
+
+    <logger name="CustOrder15" level="debug" additivity="false">
+        <appender-ref ref="custorder15" />
+        <appender-ref ref="console" />
+    </logger>
+    <logger name="CustOrder16" level="debug" additivity="false">
+        <appender-ref ref="custorder16" />
+        <appender-ref ref="console" />
+    </logger>
+
+    <logger name="CustOrder17" level="debug" additivity="false">
+        <appender-ref ref="custorder17" />
+        <appender-ref ref="console" />
+    </logger>
+    <logger name="CustOrder18" level="debug" additivity="false">
+        <appender-ref ref="custorder18" />
+        <appender-ref ref="console" />
+    </logger>
+    <logger name="CustOrder19" level="debug" additivity="false">
+        <appender-ref ref="custorder19" />
+        <appender-ref ref="console" />
+    </logger>
+
+
+    <logger name="CustOrder20" level="debug" additivity="false">
+        <appender-ref ref="custorder20" />
+        <appender-ref ref="console" />
+    </logger>
+    <logger name="CustOrder21" level="debug" additivity="false">
+        <appender-ref ref="custorder21" />
+        <appender-ref ref="console" />
+    </logger>
+    <logger name="CustOrder22" level="debug" additivity="false">
+        <appender-ref ref="custorder22" />
+        <appender-ref ref="console" />
+    </logger>
+    <logger name="CustOrder23" level="debug" additivity="false">
+        <appender-ref ref="custorder23" />
+        <appender-ref ref="console" />
+    </logger>
+    <logger name="CustOrder24" level="debug" additivity="false">
+        <appender-ref ref="custorder24" />
+        <appender-ref ref="console" />
+    </logger>
+
 
 </configuration>
