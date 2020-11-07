@@ -2,6 +2,7 @@ package com.learning.springboot;
 
 import com.alibaba.fastjson.JSON;
 import com.google.common.collect.Lists;
+import lombok.Data;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -32,8 +33,23 @@ public class GuavaListsTest {
     }
 
     public static void main(String[] args) {
-        testLists();
+        //testLists();
         //testNewArrayList();
+
+        User user = new User();
+        System.out.println(user.hashCode());
+        user.setCode("111");
+        System.out.println(user.hashCode());
+        user.setUserId("111");
+        System.out.println(user.hashCode());
+
+    }
+
+    @Data
+    static class User {
+        private String userId;
+        private String name;
+        private String code;
     }
 
     private static void testNewArrayList() {

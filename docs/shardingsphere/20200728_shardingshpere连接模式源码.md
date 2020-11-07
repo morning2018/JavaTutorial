@@ -151,8 +151,6 @@ ConnectionMode connectionMode = maxConnectionsSizePerQuery < sqlUnits.size() ? C
 
 connectionMode 
 
-
-
 目前测试了 max.connections.size.per.query=200，24分库32分表，能支持，但是查询性能很慢
 
 
