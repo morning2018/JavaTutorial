@@ -10,9 +10,13 @@
         <module>java-basic</module>
         <module>java-multithread</module>
         <module>java-designpatterns</module>
+        <module>java-jdbc</module>
+        <module>java-tools</module>
     </modules>
     <properties>
         <junitVersion>4.12</junitVersion>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
     <dependencies>
         <dependency>

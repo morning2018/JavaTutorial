@@ -1,5 +1,6 @@
 package com.learning.jdbc.basic;
 
+import com.google.common.base.Preconditions;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -14,16 +15,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.google.common.base.Preconditions;
-import lombok.extern.slf4j.Slf4j;
-
 /**
  *  DataSourceUtil
  * @author morning
  * @date 2020/11/20 16:01
  * @since 0.0.1
  */
-@Slf4j
 public final class JdbcUtil {
     private static final String URL = "jdbc:mysql://49.233.165.151:3306/iot?useSSL=false&characterEncoding=utf8";
 
